@@ -1,6 +1,14 @@
 ---
 # installs/configures lacework
 
+# Setup tasks
+- name: configure apt and install Lacework
+  include: apt_packages.yml
+  when: ansible_os_family == 'Debian'
 
-- include: packages.yml
+- name: configure ym and install Lacework
+  include: yum_packages.yml
+  when: ansible_os_family == 'RedHat'
+
+
 - include: configure-lacework.yml
