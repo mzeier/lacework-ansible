@@ -1,0 +1,3 @@
+---
+- name: restart lacework
+  service: name=datacollector state=restarted

@@ -1,0 +1,6 @@
+---
+# installs/configures lacework
+
+
+- include: packages.yml
+- include: configure-lacework.yml

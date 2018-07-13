@@ -1,0 +1,6 @@
+---
+#
+# see https://github.com/fugue/credstash for credstash
+#
+
+lacework_accessToken: "{{ lookup('credstash', 'lacework.accessToken', region='us-west-2', profile_name='default') }}"

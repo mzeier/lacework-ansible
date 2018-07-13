@@ -1,0 +1,22 @@
+---
+
+- block:
+
+  - name: lacework apt repository key.
+    apt_key:
+      keyserver: "keyserver.ubuntu.com"
+      id: 18E76630
+      state: present
+
+  - name: add lacework apt repository.
+    apt_repository:
+      repo: "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/gpgsign/latest/DEB/ubuntu/{{ ansible_distribution_version }} {{ ansible_distribution_release }} main"
+      filename: "lacework"
+      state: present
+      update_cache: yes
+
+  - name: install lacework agent
+    apt: name=lacework state=latest
+
+  tags:
+   - lacework
