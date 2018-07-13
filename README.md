@@ -7,6 +7,8 @@ Platforms
 ---------
 
 * Ubuntu
+* CentOS
+* RedHat
 
 Role Variables
 --------------
