@@ -1,0 +1,17 @@
+---
+
+- block:
+
+  - name: download lacework yum repo
+    get_url:
+      url: "https://s3-us-west-2.amazonaws.com/gpgsign/latest/RPMS/x86_64/lacework-prod.repo"
+      dest: "/etc/yum.repos.d/lacework-prod.repo"
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: install lacework agent
+    yum: name=lacework state=latest update_cache=yes
+
+  tags:
+   - lacework
