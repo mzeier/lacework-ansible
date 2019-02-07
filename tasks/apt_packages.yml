@@ -10,7 +10,7 @@
 
   - name: add lacework apt repository.
     apt_repository:
-      repo: "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/gpgsign/latest/DEB/ubuntu/{{ ansible_distribution_version }} {{ ansible_distribution_release }} main"
+      repo: "deb [arch=amd64] https://packages.lacework.net/DEB/ubuntu/{{ ansible_distribution_version }} {{ ansible_distribution_release }} main"
       filename: "lacework"
       state: present
       update_cache: yes
