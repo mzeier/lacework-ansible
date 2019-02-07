@@ -4,7 +4,7 @@
 
   - name: download lacework yum repo
     get_url:
-      url: "https://s3-us-west-2.amazonaws.com/gpgsign/latest/RPMS/x86_64/lacework-prod.repo"
+      url: "https://packages.lacework.net/RPMS/x86_64/lacework-prod.repo"
       dest: "/etc/yum.repos.d/lacework-prod.repo"
       owner: root
       group: root
